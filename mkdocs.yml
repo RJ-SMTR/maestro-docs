@@ -4,8 +4,8 @@ theme:
   name: material
   # logo: assets/logo.png
   features:
-  - navigation.instant
-  - navigation.sections
+    - navigation.instant
+    - navigation.sections
   language: pt
   palette:
     - media: "(prefers-color-scheme: light)"
@@ -20,19 +20,19 @@ theme:
         name: Switch to light mode
 
 nav:
-  - Início: 
-    - Acesso aos Dados:
-      - Como acessar o datalake: index.md
-    - Catálogo de Dados:
-      - br_rj_riodejaneiro_brt_gps: index.md
-    - Documentação das Pipelines:
-      - Multas Automáticas: index.md
-      - Registros GPS: index.md
-    - Desenv. das Pipelines:
-      - Início: index.md
-      - Instalação: 
-        - Local: index.md
-        - Nuvem: index.md
-      - maestro-bq:
-        - Referência: maestro-bq-ref.md
-      - Mapa: index.md
+  - Início:
+      - Acesso aos Dados:
+          - Como acessar o datalake: index.md
+      - Catálogo de Dados:
+          - br_rj_riodejaneiro_brt_gps: index.md
+      - Documentação das Pipelines:
+          - Multas Automáticas: index.md
+          - Registros GPS: index.md
+      - Desenv. das Pipelines:
+          - Início: index.md
+          - Instalação:
+              - Local: maestro-install.md
+              - Nuvem: index.md
+          - maestro-bq:
+              - Referência: maestro-bq-ref.md
+          - Mapa: index.md
