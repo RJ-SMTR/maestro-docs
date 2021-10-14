@@ -4,8 +4,8 @@ theme:
   name: material
   # logo: assets/logo.png
   features:
-  - navigation.instant
-  - navigation.sections
+    - navigation.instant
+    - navigation.sections
   language: pt
   palette:
     - media: "(prefers-color-scheme: light)"
