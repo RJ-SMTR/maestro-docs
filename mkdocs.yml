@@ -26,7 +26,7 @@ nav:
     - Catálogo de Dados:
       - br_rj_riodejaneiro_brt_gps: index.md
     - Documentação das Pipelines:
-      - Multas Automáticas: index.md
+      - Multas Automáticas: pipelines/multas-automaticas.md
       - Registros GPS: index.md
     - Desenv. das Pipelines:
       - Início: index.md
@@ -36,3 +36,15 @@ nav:
       - maestro-bq:
         - Referência: maestro-bq-ref.md
       - Mapa: index.md
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+extra:
+  version:
+    provider: mike
+
+extra_javascript:
+  - javascripts/config.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
