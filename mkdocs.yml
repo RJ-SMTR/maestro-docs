@@ -21,21 +21,21 @@ theme:
 
 nav:
   - Início: 
-    - Acesso aos Dados:
-      - Como acessar o datalake: index.md
-    - Catálogo de Dados:
-      - br_rj_riodejaneiro_brt_gps: index.md
+    # - Acesso aos Dados:
+    #   - Como acessar o datalake: index.md
+    # - Catálogo de Dados:
+    #   - br_rj_riodejaneiro_brt_gps: index.md
     - Documentação das Pipelines:
       - Multas Automáticas: pipelines/multas-automaticas.md
-      - Registros GPS: index.md
+      # - Registros GPS: index.md
     - Desenv. das Pipelines:
-      - Início: index.md
+      # - Início: index.md
       - Instalação: 
         - Local: index.md
-        - Nuvem: index.md
-      - maestro-bq:
-        - Referência: maestro-bq-ref.md
-      - Mapa: index.md
+        # - Nuvem: index.md
+      # - maestro-bq:
+        # - Referência: maestro-bq-ref.md
+      # - Mapa: index.md
 
 markdown_extensions:
   - pymdownx.arithmatex:
