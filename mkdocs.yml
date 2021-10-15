@@ -25,11 +25,11 @@ nav:
     #   - Como acessar o datalake: index.md
     # - Catálogo de Dados:
     #   - br_rj_riodejaneiro_brt_gps: index.md
-    - Documentação das Pipelines:
+    - Documentação dos Processos:
       - Multas Automáticas: pipelines/multas-automaticas.md
       # - Registros GPS: index.md
-    - Desenv. das Pipelines:
-      # - Início: index.md
+    - Desenvolvimento/Infra:
+      - Início: desenv-index.md
       - Instalação: 
         - Local: index.md
         # - Nuvem: index.md
