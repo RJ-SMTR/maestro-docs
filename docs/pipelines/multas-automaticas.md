@@ -41,7 +41,14 @@ As multas aplicadas através da ferramenta hoje se dividem em 3 tipos:
       por mais que 10 minutos consecutivos.* --> TODO: Checar pois na
       resolução diz: "não ficaram parados por 30 minutos ou mais no mesmo
       ponto"
-- **Faixa horária**: intervalo de 10 minutos comecando no primeiro minuto da hora, ex: 6:00, 6:10, 6:20. A faixa horária será desconsiderada caso ocorra mais que 2 falhas na captura dos dados de GPS pela SMTR. A captura é executada a cada 1 minuto, portanto, espera-se 8 capturas a cada faixa horária.
+- **Faixa horária**: intervalo de 10 minutos comecando no primeiro
+  minuto da hora, ex: 6:00, 6:10, 6:20. A faixa horária será
+  desconsiderada caso ocorra mais que 2 falhas na captura dos dados de
+  GPS pela SMTR. A captura é executada a cada 1 minuto, portanto,
+  espera-se 8 capturas a cada faixa horária.
+- **Gravidade da multa (Art. 44)**: As multas para atos oriundos
+  diretamente do permissionário/concessionário classificam-se em quatro
+  categorias, de acordo com sua gravidade (Tabela 1)
 
 ## Frota operante abaixo da frota determinada
 
@@ -79,25 +86,10 @@ aplicacão das multas via gps. Portanto, a SMTR define junto à Resolução, um 
     - existirem 3 faixas horárias (30 minutos) consecutivas abaixo da frota determinada
     - existirem 8 faixas horárias (80 minutos) não consecutivas abaixo da frota determinada
 
-
-Tabela 1: Picos por consórcio
-
-| Consórcio    | Pico Manhã  | Pico Tarde    |
-| ------------ | ----------- | ------------- |
-| Intersul     | 6:00 - 9:00 | 16:00 - 19:00 |
-| Internorte   | 5:30 - 8:30 | 16:00 - 19:00 |
-| Transcarioca | 5:30 - 8:30 | 16:00 - 19:00 |
-| Santa Cruz   | 5:00 - 8:00 | 17:00 - 20:00 |
-
-[1]:
-https://doweb.rio.rj.gov.br/apifront/portal/edicoes/imprimir_materia/31457/1900
-
 ## Falha no GPS
 
-TODO: Esclarecer regra
-
-- > 1h (por dia) sem sinal do GPS (Art 17 X)
-- > 24h (por dia)  sem sinal do GPS (Art 17 IX) 
+Segundo o Art. 17 X do Código de Conduta do SPPO, as condicões para
+aplicacão da multa por falha de GPS são as seguintes:
 
 ```
 IX – Suspender por 24 (vinte e quatro) horas ou mais, sem autorização prévia do Órgão Gestor de transportes do Município do Rio de Janeiro, a operação do sistema de
@@ -111,10 +103,9 @@ Infração – grave
 Penalidade – multa (Grupo E-2)
 ```
 
-
 ## Não operação da linha
 
-TODO: Esclarecer regra
+TODO: Esclarecer regra (têm a mesma penalidade)
 
 - > 24h sem carros (Art 17 VII)
 - > 4h sem carros  (Art 17 VII)
@@ -130,3 +121,21 @@ em um ou ambos os sentidos:
 Infração – gravíssima
 Penalidade – multa (Grupo E-1)
 ```
+
+Tabela 1: Gravidade da multa
+
+| Grupo | Gravidade | Valor |
+| ----- | --------- | ----- |
+| Grupo E-1 | Gravíssima | 520 (quinhentas e vinte) UFIR-RJ |
+| Grupo E-2 | Grave | 260 (duzentas e sessenta) UFIR-RJ |
+| Grupo E-3 | Média | 130 (cento e trinta) UFIR-RJ |
+| Grupo E-4 | Leve | 65 (sessenta e cinco) UFIR-RJ |
+
+Tabela 2: Picos por consórcio
+
+| Consórcio    | Pico Manhã  | Pico Tarde    |
+| ------------ | ----------- | ------------- |
+| Intersul     | 6:00 - 9:00 | 16:00 - 19:00 |
+| Internorte   | 5:30 - 8:30 | 16:00 - 19:00 |
+| Transcarioca | 5:30 - 8:30 | 16:00 - 19:00 |
+| Santa Cruz   | 5:00 - 8:00 | 17:00 - 20:00 |
