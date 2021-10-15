@@ -12,14 +12,13 @@ linhas municipais. Essas condições, quando não cumprias, resultam em
 possíveis multas e outras sanções.
 
 A partir de 2021, a SMTR passa a realizar o cálculo de multas
-automáticas a partir da ferramenta de monitoramento desenvolvida,
-conforme [resolução nº 3413](https://doweb.rio.rj.gov.br/apifront/portal/edicoes/imprimir_materia/738149/4986).
+automáticas a partir da ferramenta desenvolvida de monitoramento por GPS, conforme [resolução nº 3413](https://doweb.rio.rj.gov.br/apifront/portal/edicoes/imprimir_materia/738149/4986).
 
-As multas aplicadas através da ferramenta hoje se dividem em 3 tipos:
+As multas aplicadas através da ferramenta podem ser aplicadas em 3 casos:
 
 - [Frota operante abaixo da determinada](#frota-operante-abaixo-da-frota-determinada)
-- [Falha no GPS](#falha-no-gps)
-- [Não operação da linha](#nao-operacao-da-linha)
+- [Falha no GPS (**não implementado**)](#falha-no-gps)
+- [Não operação da linha (**não implementado**)](#nao-operacao-da-linha)
 
 ## Definicões
 
@@ -35,7 +34,7 @@ As multas aplicadas através da ferramenta hoje se dividem em 3 tipos:
   emitem um sinal de gps em determinada faixa horária. Os veículos
   considerados em operacão são aqueles que (Art. 2 I da Resolução):
     - não estão em garagens (ver documentação da [pipeline de gps
-      TODO]()). Veja aqui a [lista de garagens consideradas TODO]() # ou próximos de terminais?
+      - TODO: escrever docs]()). Veja aqui a [lista de garagens consideradas - TODO: add lista]()
     - *[NÃO IMPLEMENTADO] tem o serviço do gps associado ao mesmo trajeto que está sendo realizado no instante da emissão do sinal (ver documentação da pipeline de gps).*
     - *[NÃO IMPLEMENTADO] não ficaram tiveram velocidade menor que 3km/h
       por mais que 10 minutos consecutivos.* --> TODO: Checar pois na
@@ -50,13 +49,15 @@ As multas aplicadas através da ferramenta hoje se dividem em 3 tipos:
   diretamente do permissionário/concessionário classificam-se em quatro
   categorias, de acordo com sua gravidade (Tabela 1)
 
-## Frota operante abaixo da frota determinada
+## Tipos de multa
+
+### Frota operante abaixo da frota determinada
 
 O Código de Conduta do SPPO dispõe no Artigo 17.I sobre as condições para
 aplicacão de multas aos consóricios que operarem linhas abaixo da frota
 determinada.
 
-### Definição
+#### Definição
 
 Segundo o Código de Conduta do SPPO no Artigo 17.I, as condicões para
 aplicacão da multa por frota operante abaixo da frota determinada são as seguintes:
@@ -67,7 +68,7 @@ aplicacão da multa por frota operante abaixo da frota determinada são as segui
     - *[NÃO CONSIDERADO] < 50% da frota determinada, para sábados*
     - *[NÃO CONSIDERADO] < 40% da frota determinada, para domingos*
     
-### Regras específicas para aplicação
+#### Regras específicas para aplicação
 
 O Código de Conduta do SPPO não explicita como operacionalizar a
 aplicacão das multas via gps. Portanto, a SMTR define junto à Resolução, um conjunto de regras quais são:
@@ -78,7 +79,7 @@ aplicacão das multas via gps. Portanto, a SMTR define junto à Resolução, um 
    horários que determinam o pico são diferentes para cada consórcio
    dado a natureza de suas operações (ver Tabela 1)
 - A frota operante será calculada para cada linha e faixa horária.
-  Se as condições satisfizerem a [definição acima](), então a
+  Se as condições satisfizerem a definição acima, então a
   linha naquela faixa horária será considerada abaixo da frota
   determinada.
 
@@ -86,7 +87,7 @@ aplicacão das multas via gps. Portanto, a SMTR define junto à Resolução, um 
     - existirem 3 faixas horárias (30 minutos) consecutivas abaixo da frota determinada
     - existirem 8 faixas horárias (80 minutos) não consecutivas abaixo da frota determinada
 
-## Falha no GPS
+### Falha no GPS (não implementado)
 
 Segundo o Art. 17 X do Código de Conduta do SPPO, as condicões para
 aplicacão da multa por falha de GPS são as seguintes:
@@ -103,12 +104,10 @@ Infração – grave
 Penalidade – multa (Grupo E-2)
 ```
 
-## Não operação da linha
+### Não operação da linha (não implementado)
 
-TODO: Esclarecer regra (têm a mesma penalidade)
-
-- > 24h sem carros (Art 17 VII)
-- > 4h sem carros  (Art 17 VII)
+Segundo o Art. 17 X do Código de Conduta do SPPO, as condicões para
+aplicacão da multa por falha de GPS são as seguintes:
 
 ```
 VII – Suspender por 24 (vinte e quatro) horas ou mais, sem autorização prévia do Órgão Gestor de Transportes do Município do Rio de Janeiro, a operação de uma linha ou
@@ -122,6 +121,18 @@ Infração – gravíssima
 Penalidade – multa (Grupo E-1)
 ```
 
+## Estrutura dos dados
+
+Para verificação das multas são geradas 3 tabelas principais, que estão
+disponíveis no datalake da SMTR dentro de [`projeto_multa_automatica` -
+TODO: add link em prod]():
+
+- Sumário de multas por linha (`sumario_multa_linha_onibus`)
+- Detalhes de multa por linha (`detalhes_multa_linha_onibus`)
+- Detalhes de multa por veículos (`detalhes_multa_veiculo_onibus`)
+
+## Tabelas e figuras de referência
+
 Tabela 1: Gravidade da multa
 
 | Grupo | Gravidade | Valor |
@@ -131,11 +142,30 @@ Tabela 1: Gravidade da multa
 | Grupo E-3 | Média | 130 (cento e trinta) UFIR-RJ |
 | Grupo E-4 | Leve | 65 (sessenta e cinco) UFIR-RJ |
 
-Tabela 2: Picos por consórcio
+Tabela 2: Picos por consórcio (ajustado horário de pico da manhã)
 
 | Consórcio    | Pico Manhã  | Pico Tarde    |
 | ------------ | ----------- | ------------- |
-| Intersul     | 6:00 - 9:00 | 16:00 - 19:00 |
-| Internorte   | 5:30 - 8:30 | 16:00 - 19:00 |
-| Transcarioca | 5:30 - 8:30 | 16:00 - 19:00 |
-| Santa Cruz   | 5:00 - 8:00 | 17:00 - 20:00 |
+| Intersul     | 6:30 - 9:30 | 16:00 - 19:00 |
+| Internorte   | 5:00 - 8:00 | 16:00 - 19:00 |
+| Transcarioca | 6:00 - 9:00 | 16:00 - 19:00 |
+| Santa Cruz   | 5:30 - 8:30 | 17:00 - 20:00 |
+
+<!-- ### Sumário de multas por linha
+
+| Coluna | Descrição | 
+| id_multa	| 
+| linha	| 
+| vista	| 
+| consorcio	| 
+| data	| 
+| tipo_dia	| 
+| pico	| 
+| faixa_horaria	| 
+| frota_servico	| 
+| frota_minima	| 
+| frota_aferida	| 
+| porcentagem_frota	| 
+| tipo_multa	| 
+| artigo_multa	| 
+| prioridade	|  -->
