@@ -30,8 +30,9 @@ nav:
       # - Registros GPS: index.md
     - Desenvolvimento/Infra:
       - Início: desenv-index.md
-      - Instalação: 
-        - Local: index.md
+      - Maestro:
+        - Instalação: maestro-install.md
+        # - Local: index.md
         # - Nuvem: index.md
       # - maestro-bq:
         # - Referência: maestro-bq-ref.md

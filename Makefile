@@ -1,1 +1,1 @@
-create-env: python3 venv -m .maestro-bq
+create-env: python3 -m venv .maestro-bq
