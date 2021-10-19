@@ -1,14 +1,14 @@
 # maestro-bq
 
-Sistema de controle, versionamento e documentacão de queries de BigQuery usando o Maestro como orquestrador.
+Sistema de controle, versionamento e documentação de queries do BigQuery usando o Maestro como orquestrador.
 
-## Usando localmente
+<!-- ## Usando localmente
 
 Para isso você deve seguir os seguintes passos:
 
 1. Rodar o maestro daemon, gcpr e dagit localmente. Ver tutorial em ...
 
-2. Salvar as 
+2. Salvar as  -->
 
 ## Atributos disponíveis para queries
 

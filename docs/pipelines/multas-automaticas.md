@@ -1,4 +1,4 @@
-# Multas Automáticas
+# Multas Automáticas - Metodologia
 
 Versão: v1.0
 
@@ -130,6 +130,9 @@ TODO: add link em prod]():
 - Sumário de multas por linha (`sumario_multa_linha_onibus`)
 - Detalhes de multa por linha (`detalhes_multa_linha_onibus`)
 - Detalhes de multa por veículos (`detalhes_multa_veiculo_onibus`)
+
+A documentação completa da pipeline de captura, tratamento e atualização
+dos dados pode ser lida [aqui](../infra/multas-automaticas.md).
 
 ## Tabelas e figuras de referência
 

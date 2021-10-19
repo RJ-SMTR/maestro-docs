@@ -11,17 +11,17 @@ A infraestrutura da SMTR é construída em cima do Google BigQuery. Os projetos 
 Todo código das pipelinas de captura e/ou atualização das tabelas em desenvolvimento e produção estão
 versionados no [Github](https://github.com/orgs/RJ-SMTR/).
 
-![](imgs/infra-overview.png)
+![](../imgs/infra-overview.png)
 
 ## Datalake
 
 ### Visão geral
 
-- Dagster:
-    - Gerenciamento de views (maestro-bq): todas as tabelas não brutas 
+- Dagster/Maestro: Orquestrador de pipelines de captura e atualização de dados.
+    - Gerenciamento de queries (maestro-bq)
     - Qualquer erro na pipeline é avisado no Discord
 
-![](imgs/infra-datalake.png)
+![](../imgs/infra-datalake.png)
 
 ### Pipelines
 - Lista das pipelines implementadas
