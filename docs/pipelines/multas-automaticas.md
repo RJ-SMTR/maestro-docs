@@ -20,6 +20,10 @@ As multas aplicadas através da ferramenta podem ser aplicadas em 3 casos:
 - [Falha no GPS (**não implementado**)](#falha-no-gps)
 - [Não operação da linha (**não implementado**)](#nao-operacao-da-linha)
 
+Para a versão 1.0 da ferramenta, consideramos somente infrações de
+**frota operante abaixo da determinada em horários de pico** como
+passíveis de multa, com exceção de sábados e domingos.
+
 ## Definicões
 
 - **Consórcio**: Empresa responsável pela operação dos itinerários das linhas. Usualmente, consórcios operam linhas com exclusividade.
@@ -33,13 +37,9 @@ As multas aplicadas através da ferramenta podem ser aplicadas em 3 casos:
 - **Frota operante**: Número de veículos distintos em operacão que
   emitem um sinal de gps em determinada faixa horária. Os veículos
   considerados em operacão são aqueles que (Art. 2 I da Resolução):
-    - não estão em garagens (ver documentação da [pipeline de gps
-      - TODO: escrever docs]()). Veja aqui a [lista de garagens consideradas - TODO: add lista]()
-    - *[NÃO IMPLEMENTADO] tem o serviço do gps associado ao mesmo trajeto que está sendo realizado no instante da emissão do sinal (ver documentação da pipeline de gps).*
-    - *[NÃO IMPLEMENTADO] não ficaram tiveram velocidade menor que 3km/h
-      por mais que 10 minutos consecutivos.* --> TODO: Checar pois na
-      resolução diz: "não ficaram parados por 30 minutos ou mais no mesmo
-      ponto"
+    - não estão em garagens (veja a [lista de garagens consideradas](https://docs.google.com/spreadsheets/d/1KwCnejLQRk2S2x1QmcInzHV7XXh4pKCalWKAMM74ngc/edit?usp=sharing));
+    - *[NÃO IMPLEMENTADO] tem o serviço do gps associado ao mesmo trajeto que está sendo realizado no instante da emissão do sinal (ver documentação da pipeline de gps);*
+    - *[NÃO IMPLEMENTADO] não tiveram velocidade menor que 3km/h por mais que 10 minutos consecutivos.*
 - **Faixa horária**: intervalo de 10 minutos comecando no primeiro
   minuto da hora, ex: 6:00, 6:10, 6:20. A faixa horária será
   desconsiderada caso ocorra mais que 2 falhas na captura dos dados de
@@ -123,9 +123,11 @@ Penalidade – multa (Grupo E-1)
 
 ## Estrutura dos dados
 
-Para verificação das multas são geradas 3 tabelas principais, que estão
+<!-- Para verificação das multas são geradas 3 tabelas principais, que estão
 disponíveis no datalake da SMTR dentro de [`projeto_multa_automatica` -
-TODO: add link em prod]():
+TODO: add link em prod](): -->
+
+Para verificação das multas são geradas 3 tabelas principais:
 
 - Sumário de multas por linha (`sumario_multa_linha_onibus`)
 - Detalhes de multa por linha (`detalhes_multa_linha_onibus`)
@@ -150,7 +152,7 @@ Tabela 2: Picos por consórcio (ajustado horário de pico da manhã)
 | Consórcio    | Pico Manhã  | Pico Tarde    |
 | ------------ | ----------- | ------------- |
 | Intersul     | 6:30 - 9:30 | 16:00 - 19:00 |
-| Internorte   | 5:00 - 8:00 | 16:00 - 19:00 |
+| Internorte   | 6:00 - 9:00 | 16:00 - 19:00 |
 | Transcarioca | 6:00 - 9:00 | 16:00 - 19:00 |
 | Santa Cruz   | 5:30 - 8:30 | 17:00 - 20:00 |
 
