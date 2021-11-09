@@ -17,7 +17,10 @@ cd maestro/
 - No seu ambiente virtual de preferência (ou sem ele), instale o aplicativo de linha de comando do maestro
 
 ```
-pip3 install -e .
+# cria ambiente virtual
+python venv -m venv
+# instala dependencias
+pip install -r .
 ```
 
 - Prepare um arquivo de variáveis de ambiente chamado `.env_local`. Ele deve seguir o seguinte modelo (preencher somente onde é requisitado, instruções abaixo):
