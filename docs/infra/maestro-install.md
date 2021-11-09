@@ -17,8 +17,8 @@ cd maestro/
 - No seu ambiente virtual de preferência (ou sem ele), instale o aplicativo de linha de comando do maestro
 
 ```
-# cria ambiente virtual
-python venv -m venv
+# cria ambiente virtual chamado venv (ou .env, conforme .gitignore)
+python -m venv venv
 # instala dependencias
 pip install -r .
 ```
