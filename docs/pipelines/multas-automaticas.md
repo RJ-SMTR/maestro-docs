@@ -1,6 +1,8 @@
 # Multas Automáticas - Metodologia
 
-Versão: v1.0
+**Versão:** v1.0
+
+**Data de início:** 19/10/21
 
 ## Visão geral
 
@@ -66,7 +68,7 @@ aplicacão da multa por frota operante abaixo da frota determinada são as segui
 - Se frota determinada > 5, então o consórcio estará sujeito a multa sempre que a frota operante for:
     - < 80% da frota determinada, para dias úteis
     - *[NÃO CONSIDERADO] < 50% da frota determinada, para sábados*
-    - *[NÃO CONSIDERADO] < 40% da frota determinada, para domingos*
+    - *[NÃO CONSIDERADO] < 40% da frota determinada, para domingos e feriados*
     
 #### Regras específicas para aplicação
 
