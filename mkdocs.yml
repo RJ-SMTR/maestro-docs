@@ -4,16 +4,23 @@ theme:
   name: material
   # logo: assets/logo.png
   features:
-    - navigation.instant
+    # - navigation.instant
+    # - navigation.sections
+    - header.autohide
     - navigation.sections
+    - navigation.top
+    - toc.integrate
+    # - navigation.tabs
   language: pt
   palette:
     - media: "(prefers-color-scheme: light)"
+      primary: "blue"
       scheme: default
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
+      primary: "blue"
       scheme: slate
       toggle:
         icon: material/toggle-switch
@@ -30,11 +37,10 @@ nav:
     # - Registros GPS: index.md
   - Infraestrutura:
     - Início: infra/index.md
-    - Maestro:
-      - Instalação: infra/maestro-install.md
-      - Versionamento de queries: infra/maestro-bq.md
-    - Pipeplines:
-      - Multas Automáticas: infra/multas-automaticas.md
+    - Maestro (Orquestrador): infra/maestro.md
+    - Maestro-bq (Versionamento de queries): infra/maestro-bq.md
+  - Pipeplines:
+    - Multas Automáticas: infra/multas-automaticas.md
       # - Local: index.md
       # - Nuvem: index.md
     # - maestro-bq:
@@ -42,6 +48,10 @@ nav:
     # - Mapa: index.md
 
 markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed
   - pymdownx.arithmatex:
       generic: true
 extra:
